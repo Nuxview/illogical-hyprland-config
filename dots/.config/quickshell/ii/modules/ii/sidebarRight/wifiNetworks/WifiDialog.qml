@@ -60,6 +60,18 @@ WindowDialog {
         }
 
         DialogButton {
+            buttonText: Translation.tr("Refresh")
+            enabled: !Network.wifiScanning
+            onClicked: {
+                Network.rescanWifi();
+            }
+        }
+
+        Item {
+            Layout.fillWidth: true
+        }
+
+        DialogButton {
             buttonText: Translation.tr("Done")
             onClicked: root.dismiss()
         }
